@@ -1,0 +1,206 @@
+@use './variables' as *
+
+// Базовые стили
+.header
+  background: $white
+  padding: 12px 0
+  box-shadow: $shadow-light
+  width: 100%
+  position: relative
+  left: 0
+  right: 0
+
+.container
+  max-width: $container-width
+  margin: 0 auto
+  padding: 0 15px
+  width: 100%  
+
+.header__body
+  display: flex
+  justify-content: space-between
+  align-items: center
+  gap: 15px
+  width: 100% 
+
+.header__logo
+  display: flex
+  align-items: center
+  gap: 8px
+  text-decoration: none
+  font-size: 18px
+  font-weight: bold
+  color: $primary-color
+
+  img
+    width: 35px
+    height: 35px
+    border-radius: 50%
+
+// Бургер-меню 
+.burger
+  display: flex
+  flex-direction: column
+  gap: 5px
+  background: transparent
+  border: none
+  cursor: pointer
+  padding: 5px
+  z-index: 101
+  position: relative
+  
+  span
+    width: 25px
+    height: 3px
+    background: $text-dark
+    transition: all 0.3s ease
+
+.burger.active
+  span:first-child
+    transform: rotate(45deg) translate(5px, 5px)
+  
+  span:nth-child(2)
+    opacity: 0
+  
+  span:last-child
+    transform: rotate(-45deg) translate(5px, -5px)
+
+// Меню для мобильных 
+.header__menu
+  position: fixed
+  top: 0
+  left: -100%
+  width: 100%           
+  height: 100vh
+  background: $white
+  transition: left 0.3s ease
+  z-index: 100
+  box-shadow: none
+  padding-top: 80px    
+  
+  &.open
+    left: 0
+
+.header__list
+  display: flex
+  flex-direction: column
+  gap: 20px
+  list-style: none
+  padding: 30px
+  margin: 0
+
+.header__item
+  a
+    text-decoration: none
+    color: $text-dark
+    font-weight: 500
+    font-size: 20px
+    transition: color $transition-fast
+    display: block
+    padding: 12px 0
+    
+    &:hover
+      color: $primary-color
+
+.header__form
+  display: flex
+  gap: 10px
+  position: relative
+  z-index: 102
+
+  button
+    padding: 6px 12px
+    border: none
+    border-radius: $border-radius
+    cursor: pointer
+    font-size: 12px
+    
+    &:first-child
+      background: transparent
+      color: $text-gray
+      
+    &:last-child
+      border: 1px solid transparent 
+      background: $primary-color
+      color: $white
+      transition: all $transition-fast
+      
+      &:hover
+        color: $primary-color
+        background: $white
+        border: 1px solid $primary-color
+
+// Планшеты 
+@media (min-width: 768px)
+  .burger
+    display: none
+  
+  .header
+    padding: 15px 0
+  
+  .header__logo
+    font-size: 22px
+    gap: 10px
+    
+    img
+      width: 45px
+      height: 45px
+  
+  .header__menu
+    position: static
+    width: auto
+    height: auto
+    background: transparent
+    padding-top: 0
+    left: auto
+    
+    &.open
+      left: auto
+  
+  .header__list
+    flex-direction: row
+    gap: 25px
+    padding: 0
+    
+    a
+      font-size: 16px
+      padding: 0
+  
+  .header__form
+    gap: 15px
+    
+    button
+      padding: 8px 18px
+      font-size: 14px
+
+// Десктоп 
+@media (min-width: 1024px)
+  .header
+    padding: 15px 0
+  
+  .container
+    padding: 0 20px
+  
+  .header__body
+    gap: 30px
+  
+  .header__logo
+    font-size: 24px
+    gap: 12px
+    
+    img
+      width: 50px
+      height: 50px
+  
+  .header__list
+    gap: 35px
+    
+    a
+      font-size: 16px
+  
+  .header__form
+    gap: 15px
+    
+    button
+      padding: 8px 20px
+      font-size: 14px
