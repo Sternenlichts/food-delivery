@@ -11,15 +11,14 @@ export function Header() {
                     </a>
                     <nav className={styles.header__menu}>
                         <ul className={styles.header__list}>
-                            <li className={styles.header__item}><a href="/menu">Menu</a></li>
-                            <li className={styles.header__item}><a href="/blog">Blog</a></li>
-                            <li className={styles.header__item}><a href="/prices">Prices</a></li>
-                            <li className={styles.header__item}><a href="/contacts">Contacts</a></li>
+                            <li className={styles.header__item}><a href="/menu">Заказать</a></li>
+                            <li className={styles.header__item}><a href="/blog">Меню</a></li>
+                            <li className={styles.header__item}><a href="/contacts">Контакты</a></li>
                         </ul>
                     </nav>
                     <div className={styles.header__form}>
-                        <button>Registration</button>
-                        <button>Autorisation</button>
+                        <button>Регистрация</button>
+                        <button>Вход</button>
                     </div>
                 </div>
             </div>
