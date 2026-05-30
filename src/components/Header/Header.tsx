@@ -7,7 +7,7 @@ export function Header() {
                 <div className={styles.header__body}>
                     <a href="/" className={styles.header__logo}>
                         <img src="/logo.jpg" alt="Food delivery logo"/>
-                        <span>Eatly</span>
+                        <span>Foodly</span>
                     </a>
                     <nav className={styles.header__menu}>
                         <ul className={styles.header__list}>

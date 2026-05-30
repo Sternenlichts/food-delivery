@@ -1,0 +1,152 @@
+@import '../../styles/variables'
+
+.hero
+    background: linear-gradient(135deg, #ffb961 0%, #efa94a 100%)
+    padding: 80px 0px 80px
+    position: relative
+    overflow: hidden
+    
+    &::before
+        content: ''
+        position: absolute
+        top: 0
+        left: 0
+        width: 100%
+        height: 100%
+        background: url('/hero-bg-food.png') no-repeat center/cover
+        opacity: 25%
+        pointer-events: none
+
+.container
+    max-width: $container-width
+    margin: 0 auto
+    padding: 0 15px
+    z-index: 1
+    display: flex
+    align-items: center
+    justify-content: space-between
+    flex-wrap: wrap
+
+.hero__content
+    flex: 1
+    min-width: 280px
+    max-width: 580px
+
+.hero__title
+    font-size: 42px
+    font-weight: bold
+    color: $text-dark
+    margin-bottom: 20px
+    line-height: 1.2
+
+.hero__subtitle
+    font-size: 18px
+    color: $text-light
+    margin-bottom: 30px
+    line-height: 1.5
+
+.hero__btn
+    background: $primary-color
+    color: $white
+    border: none
+    padding: 14px 32px
+    font-size: 16px
+    font-weight: 600
+    border-radius: 50px
+    cursor: pointer
+    margin-bottom: 40px
+    transition: all $transition-fast
+
+    &:hover
+        background: $primary-hover
+        box-shadow: 0 5px 15px
+
+.hero__search
+    display: flex
+    gap: 10px
+    background: $white
+    border-radius: 50px
+    padding: 5px
+    box-shadow: $shadow-light
+
+    input
+        flex: 1
+        border: none
+        padding: 14px 20px
+        font-size: 14px
+        background: transparent
+        outline: none
+
+        &::placeholder
+            color: $text-gray
+        
+    button
+        background: $primary-color
+        color: $white
+        border: none
+        padding: 10px 24px
+        border-radius: 50px
+        cursor: pointer
+        font-weight: 600
+        transition: all $transition-fast
+
+        &:hover
+            background: $primary-hover
+
+
+@media(min-width: 768px)
+
+    .hero
+        padding: 100px 0 100px
+
+    .hero__title
+        font-size: 52px
+
+    .hero__subtitle
+        font-size: 20px
+
+    .hero__btn
+        padding: 16px 36px
+        font-size: 18px
+
+    .hero__search
+        input
+            padding: 16px 24px
+            font-size: 16px
+        
+        button
+            padding: 12px 28px
+            font-size: 16px
+    
+@media (min-width: 1024px)
+    .hero
+        padding: 120px 0 120px
+
+    .hero__content
+        max-width: 580px
+
+    .hero__title
+        font-size: 64px
+        margin-bottom: 24px
+
+    .hero__subtitle
+        font-size: 22px
+        margin-bottom: 36px
+
+    .hero__btn
+        padding: 18px 40px
+        font-size: 18px
+        margin-bottom: 50px
+
+@media (min-width: 1400px)
+    .hero
+        padding: 140px 0 140px
+
+    .hero__content
+        max-width: 650px
+
+    .hero__title
+        font-size: 72px
+
+    .hero__subtitle
+        font-size: 24px
