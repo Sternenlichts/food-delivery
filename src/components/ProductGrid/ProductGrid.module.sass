@@ -1,0 +1,21 @@
+@import '../../styles/variables'
+
+.product__grid
+    display: grid
+    gap: 30px
+    grid-template-columns: 1fr
+    padding: 40px 20px
+    margin: 0 auto
+    max-width: 1400px
+
+    @media (min-width: 768px)
+        grid-template-columns: repeat(2, 1fr)
+        gap: 32px
+
+    @media (min-width: 1024px)
+        grid-template-columns: repeat(3, 1fr)
+        gap: 34px
+    
+    @media (min-width: 1280px)
+        grid-template-columns: repeat(4, 1fr)
+        gap: 36px

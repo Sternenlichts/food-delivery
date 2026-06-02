@@ -1,16 +1,22 @@
 import styles from './Card.module.sass'
 
-export function Card() {
+interface CardProps {
+    title: string
+    price: number
+    image: string
+  }
+
+export function Card({title, price, image} : CardProps) {
     return (
         <div className={styles.card}>
             <img 
-                src="./hero-bg-food.png" 
-                alt="food" 
+                src={image}
+                alt={title}
                 className={styles.card__image} 
             />
             <div className={styles.card__body}>
-                <h3 className={styles.card__title}>Название блюда</h3>
-                <p className={styles.card__description}>Описание блюда</p>
+                <h3 className={styles.card__title}>{title}</h3>
+                <p className={styles.card__price}>{price} ₽</p>
                 
                 <div className={styles.card__actions}>
                     <div className={styles.card__quantity}>    
