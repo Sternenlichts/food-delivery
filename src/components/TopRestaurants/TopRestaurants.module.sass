@@ -1,0 +1,48 @@
+@import '../../styles/variables'
+
+.topRestaurants
+    padding: 40px 0
+    background: #fafafa
+
+.container
+    max-width: $container-width
+    margin: 0 auto
+    padding: 0 20px
+
+.topRestaurants__header
+    display: flex
+    justify-content: space-between
+    align-items: center
+    margin-bottom: 32px
+
+    h2
+        font-size: 28px
+        font-weight: 700
+        color: $text-dark
+        margin: 0
+
+.showAllBtn
+    background: transparent
+    border: 1px solid $primary-color
+    color: $primary-color
+    padding: 8px 24px
+    border-radius: 30px
+    font-size: 14px
+    font-weight: 500
+    cursor: pointer
+    transition: all 0.2s
+
+    &:hover
+        background: $primary-color
+        color: white
+
+.topRestaurants__grid
+    display: grid
+    gap: 24px
+    grid-template-columns: 1fr
+
+    @media (min-width: 640px)
+        grid-template-columns: repeat(2, 1fr)
+
+    @media (min-width: 1024px)
+        grid-template-columns: repeat(4, 1fr)
